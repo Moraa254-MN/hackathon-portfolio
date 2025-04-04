@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mercy Moraa | Cyber-Engineer Portfolio</title>
+  <style>
+    :root {
+      --neon-cyan: #0ff;
+      --neon-pink: #f0f;
+      --cyber-black: #0a0a0f;
+      --cyber-blue: #16213e;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Exo 2', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #e0e0e0;
+      background: var(--cyber-black);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--cyber-blue) 0%, var(--cyber-black) 100%);
+      color: var(--neon-cyan);
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 3px solid var(--neon-pink);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(16, 16, 32, 0.9);
+      backdrop-filter: blur(5px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .tab {
+      padding: 0.8rem 2rem;
+      border: 1px solid var(--neon-cyan);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: transparent;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .tab.active {
+      background: var(--neon-cyan);
+      color: var(--cyber-black);
+      box-shadow: 0 0 15px var(--neon-cyan);
+    }
+
+    .tab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px var(--neon-cyan);
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    h2 {
+      color: var(--neon-pink);
+      border-bottom: 2px solid var(--neon-cyan);
+      padding-bottom: 0.5rem;
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+    }
+
+    .project, .achievement {
+      background: rgba(16, 16, 32, 0.8);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid var(--neon-cyan);
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover, .achievement:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-item {
+      padding: 1rem;
+      text-align: center;
+      border: 1px solid var(--neon-pink);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-item::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, var(--neon-pink), transparent);
+      animation: glow 3s linear infinite;
+    }
+
+    @keyframes glow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--cyber-blue);
+      color: var(--neon-cyan);
+      border-top: 1px solid var(--neon-pink);
+    }
+
+    a {
+      color: var(--neon-cyan);
+      position: relative;
+    }
+
+    a:hover {
+      color: var(--neon-pink);
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--neon-pink);
+      transition: width 0.3s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .contact-card {
+      padding: 1.5rem;
+      border: 1px solid var(--neon-cyan);
+      border-radius: 5px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MERCY MORAA</h1>
+    <p>CYBER-DEVELOPER // CODE_GLITCH_TERMINATOR</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>EMAIL_CRYPTEX</h3>
+        <p>mercynyabuto24@gmail.com</p>
+      </div>
+      <div class="contact-card">
+        <h3>COM_LINK</h3>
+        <p>0708 030 942</p>
+      </div>
+      <div class="contact-card">
+        <h3>CODE_REPOSITORY</h3>
+        <a href="https://github.com/Moraa254-MN" target="_blank">GITHUB NODE</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" onclick="switchTab('profile')">PROFILE</button>
+    <button class="tab" onclick="switchTab('skills')">SKILL_MATRIX</button>
+    <button class="tab" onclick="switchTab('projects')">PROJECT_ARCHIVE</button>
+    <button class="tab" onclick="switchTab('education')">EDUCATION</button>
+  </nav>
+
+  <section id="profile" class="active">
+    <h2>// USER_PROFILE</h2>
+    <p>
+      <span class="cyber-text">> INITIALIZING BIOGRAPHY...</span><br>
+      A passionate cyber-developer currently pursuing digital mastery at Kabete National Polytechnic. 
+      Specializes in Python-based system manipulation and web interface construction. 
+      Proven ability to breach complex problems and deploy robust solutions.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>// SKILL_MATRIX</h2>
+    <div class="skills-grid">
+      <div class="skill-item">Python v3.11</div>
+      <div class="skill-item">Flask Framework</div>
+      <div class="skill-item">SQL/NoSQL</div>
+      <div class="skill-item">API Warfare</div>
+      <div class="skill-item">System Debugging</div>
+      <div class="skill-item">Cyber Security</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>// PROJECT_ARCHIVE</h2>
+    <div class="project">
+      <h3>STREAMER STATUS MONITOR v2.0</h3>
+      <div class="tech-stack">
+        <span class="tech-tag">FLASK CORE</span>
+        <span class="tech-tag">HEROKU OS</span>
+        <span class="tech-tag">REAL-TIME SYS</span>
+      </div>
+      <ul>
+        <li>Real-time streamer status surveillance system</li>
+        <li>Automated uptime calculation algorithms</li>
+        <li>Encrypted error logging protocols</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>// KNOWLEDGE_BASE</h2>
+    <div class="timeline">
+      <div class="timeline-event">
+        <h3>DIPLOMA IN CYBER SYSTEMS</h3>
+        <p>Kabete National Polytechnic (2022-2025)</p>
+        <p>Specialization: Advanced Code Manipulation</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>// SYSTEM_MESSAGE: All rights reserved © 2025 [MORAA SYSTEMS]</p>
+    <p>v2.5.1 // Last Updated: 2024-04-20T12:00:00Z</p>
+  </footer>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab, section').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
